@@ -1,0 +1,106 @@
+body{
+    background: #e2e2e2 !important;
+    padding: 2px;
+}
+
+
+.bg-primary{
+    background: #009688 !important;
+
+}
+
+.list{
+    color: ghostwhite !important;
+}
+
+.banner{
+    width: 100%;
+    height: 92.3vh;
+    /*height:700px;*/
+    background:linear-gradient(rgba(0,0,0,.8),rgba(0,0,0,.8)),url("../img/Radio_Home.jpg");
+    background-size: cover;
+    color: ghostwhite;
+}
+
+.my-card{
+    padding: 20px;
+    background: #ffffff;
+}
+
+
+.col-md-4{
+    margin-bottom: 20px;
+    margin-top: 30px;
+    /*height: 35rem;*/
+}
+
+.bg-custom-1 {
+    background-color: #85144b;
+}
+
+.bg-custom-2 {
+    background-image: linear-gradient(15deg, #13547a 0%, #80d0c7 100%);
+}
+
+.mr-2{
+    width: 70rem;
+}
+
+.searched-container{
+    margin-top: 20px;
+}
+
+.searched-station{
+    background-color: #619fb0;
+
+}
+
+.searched-text{
+    color:#e3e7e8;
+    font-family: "Fira Code Retina";
+    font-weight:lighter;
+
+
+}
+
+.navbar-expand-sm{
+    margin-top: 10px;
+}
+
+.btn-info{
+    margin-top: 10px;
+    width: 10rem;
+}
+
+.main_div{
+
+    padding-top:5rem;
+    padding-bottom: 5rem;
+}
+
+/*.card_row{*/
+/*    height: 500px;*/
+/*}*/
+
+.channel_list_table{
+    margin-top: 20px;
+
+}
+
+.table > thead > tr > th{
+    background-color: plum;      //color name is customizable
+}
+
+.card-title{
+    color: darkgreen;
+    height: 20px;
+    font-weight: bolder;
+    font-family: cursive;
+}
+
+.card-text{
+    color: orange;
+    height: 10px;
+    font-weight: bolder;
+    font-family: "Bookman Old Style";
+}

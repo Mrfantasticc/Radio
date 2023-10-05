@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:replace="userBase::layout(~{::section})">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <title>Document</title>
+</head>
+<body>
+  <section>
+
+      <div class="container text-center main_div">
+
+<!--          search text display-->
+
+          <div class="container">
+              <div class="row searched-row">
+                  <div class="container searched-container">
+                      <div class="row searched-station">
+                          <h1 class="searched-text"> Search Your Stations</h1>
+
+                      </div>
+                  </div>
+
+
+<!--                  Channel search Bar-->
+
+                  <nav class="navbar navbar-dark bg-dark navbar-expand-sm">
+                  <a class="navbar-brand" href="#">
+                      <img th:src="@{/img/radio_image.jpg}" width="30" height="30" alt="logo" src="">
+                      Mood Tunner
+<!--                      https://s3.eu-central-1.amazonaws.com/bootstrapbaymisc/blog/24_days_bootstrap/logo_white.png-->
+                  </a>
+                  <form class="form-inline" action="searchStation" method="get">
+                      <input name="keyword" class="form-control mr-2" type="search" placeholder="Country Name Or City Name Or Station Name" aria-label="Search">
+                      <button class="btn btn-info" type="submit"><i class="fas fa-search"></i></button>
+                  </form>
+                  </nav>
+
+              </div>
+          </div>
+
+
+<!--          channel display card-->
+
+          <div class="row card_row" >
+              <div class="col-6 col-md-4" th:each="station : ${stations}" >
+                  <div class="card" style="width: 26rem;">
+                      <img alt="..." class="card-img-top" th:src="@{'/channelImages/'+${station.channelPhoto}}" style="height: 15rem;">
+                      <div class="card-body">
+                          <h5 class="card-title" th:text="${station.stationName}"></h5>
+                          <p class="card-text" th:text="${station.countryName}"></p>
+                          <p class="card-text" th:text="${station.cityName}"></p>
+<!--                          <a href="#" class="btn btn-primary">Go somewhere</a>-->
+                          <audio class="w-100" controls  th:src="${station.stationURL}">click</audio></h1>
+                      </div>
+                  </div>
+              </div>
+              <br/>
+          </div>
+      </div>
+
+  </section>
+
+
+</body>
+</html>

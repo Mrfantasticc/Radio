@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:replace="adminBase::layout(~{::section})">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+  <title>Document</title>
+</head>
+<body>
+<section>
+
+  <div class="container text-center main_div">
+
+    <div class="container searched-container">
+      <div class="row searched-station">
+        <h1 class="searched-text"> Searched Stations</h1>
+
+      </div>
+    </div>
+
+    <div class="row card_row">
+      <div class="col-6 col-md-4" th:each="station : ${stations}">
+        <div class="card" style="width: 26rem;">
+          <img src="..." th:src="@{'/channelImages/'+${station.channelPhoto}}" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title" th:text="${station.stationName}"></h5>
+            <p class="card-text" th:text="${station.countryName}"></p>
+            <p class="card-text" th:text="${station.cityName}"></p>
+            <!--                          <a href="#" class="btn btn-primary">Go somewhere</a>-->
+            <audio class="w-100" controls  th:src="${station.stationURL}">click</audio></h1>
+          </div>
+        </div>
+      </div>
+      <br/>
+    </div>
+
+
+
+
+
+
+
+    <!--        </div>-->
+
+
+
+
+
+
+
+
+    <!--          <div class="card" style="width: 18rem;" th:each="station :${stations}">-->
+    <!--              <img src="..." class="card-img-top" alt="...">-->
+    <!--              <div class="card-body">-->
+    <!--                  <h5 class="card-title" th:text="${station.stationName}"></h5>-->
+    <!--                  <p class="card-text" th:text="${station.countryName}"></p>-->
+    <!--                  <p class="card-text" th:text="${station.cityName}"></p>-->
+    <!--                  <a href="#" class="btn btn-primary">Go somewhere</a>-->
+    <!--              </div>-->
+    <!--          </div>-->
+
+  </div>
+
+</section>
+
+
+</body>
+</html>

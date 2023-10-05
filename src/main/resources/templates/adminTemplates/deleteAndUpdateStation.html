@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:replace="adminBase::layout(~{::section})">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <title>Document</title>
+</head>
+<body>
+<section>
+
+    <div class="container text-center main_div">
+
+        <!--          search text display-->
+
+        <div class="container">
+            <div class="row searched-row">
+                <div class="container searched-container">
+                    <div class="row searched-station">
+                        <h1 class="searched-text">Stations List</h1>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <!--          channel display card-->
+
+        <table class="table channel_list_table">
+            <thead>
+            <tr>
+                <th scope="col">Id</th>
+                <th scope="col">Country Name</th>
+                <th scope="col">City Name</th>
+                <th scope="col">Station Name</th>
+                <th scope="col">Station Url</th>
+                <th scope="col">Station Frequency</th>
+                <th scope="col">Action</th>
+
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="station : ${stations}">
+                <th scope="row" th:text="${station.id}"></th>
+                <td th:text="${station.countryName}"></td>
+                <td th:text="${station.cityName}"></td>
+                <td th:text="${station.stationName}"></td>
+                <td th:text="${station.stationURL}"></td>
+                <td th:text="${station.stationFrequency}"></td>
+                <td>
+
+                    <a th:href="@{'editStationDts/'+${station.id}}" class="btn btn-primary">Edit</a>
+                    <a th:href="@{'deleteStationDts/'+${station.id}}" class="btn btn-danger">Delete</a>
+
+
+                </td>
+
+
+            </tr>
+
+
+            </tbody>
+        </table>
+
+    </div>
+
+</section>
+
+
+</body>
+</html>

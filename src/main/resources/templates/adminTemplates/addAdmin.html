@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:replace="adminBase::layout(~{::section})">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+<section>
+  <div class="container mt-3 main_div">
+    <div class="row">
+      <div class="col-md-6 offset-md-3">
+        <div class="my-card">
+
+          <!--                    <div th:if="${session.message}" th:classappend="${session.message.type}" class="alert alert-primary" role="alert">-->
+          <!--                        <p class="text-center" th:text="${session.message.content}"></p>-->
+
+          <!--                    </div>-->
+
+
+          <div class="container text-center">
+            <img width="80px" th:src="@{/img/membership.png}" alt="">
+          </div>
+          <h1 class="text-center">Add Admin Here !!</h1>
+
+
+
+
+          <!--          th:object get mapped with controller user, we can see the value of user by -->
+          <!--          using th:value-->
+          <form  th:action="addAdminform" method="post">
+            <div class="mb-3">
+              <label  class="form-label">Full Name</label>
+              <input type="text" class="form-control "  name="name" aria-describedby="emailHelp" placeholder="Enter here" >
+
+            </div>
+
+            <div class="mb-3">
+              <label for="city_field" class="form-label">Email</label>
+              <input type="email" class="form-control" name="email" id="city_field" aria-describedby="emailHelp" placeholder="Enter here"  >
+            </div>
+
+            <div class="mb-3">
+              <label for="stationName_field" class="form-label">Mobile No.</label>
+              <input type="text" class="form-control" name="mobileNo" id="stationName_field" aria-describedby="emailHelp" placeholder="Enter here"   >
+            </div>
+
+            <div class="mb-3">
+              <label for="stationURL_field" class="form-label">Password</label>
+              <input type="password" class="form-control" name="password" id="stationURL_field" aria-describedby="emailHelp" placeholder="Enter here"   >
+            </div>
+
+            <div class="mb-3">
+              <label for="stationFrequency_field" class="form-label">City</label>
+              <input type="text" class="form-control" name="city" id="stationFrequency_field" aria-describedby="emailHelp" placeholder="Enter here"  >
+            </div>
+            <div class="mb-3">
+              <label for="stationPhoto_field" class="form-label">Role</label>
+              <input type="text" class="form-control" name="role" id="stationphoto_field" aria-describedby="emailHelp" placeholder="Enter here"  >
+            </div>
+
+
+            <!--                        <textarea placeholder="Enter something about Radio Station" rows="3" class="form-control" ></textarea>-->
+
+            <div class="container text-center">
+              <button type="submit" class="btn btn-primary ">Add User</button>
+              <button type="reset" class="btn btn-warning">Reset</button>
+
+            </div>
+          </form>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+</body>
+</html>
